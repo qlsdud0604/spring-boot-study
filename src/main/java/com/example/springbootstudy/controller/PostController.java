@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/get-api")
+@RequestMapping("/api/v1/post-api")
 public class PostController {
 
     @PostMapping(value = "/default")
