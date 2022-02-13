@@ -1,5 +1,7 @@
 package com.example.springbootstudy.controller;
 
+import com.example.springbootstudy.common.Constants;
+import com.example.springbootstudy.common.exception.CustomException;
 import com.example.springbootstudy.data.dto.ProductDTO;
 import com.example.springbootstudy.service.ProductService;
 import org.slf4j.Logger;
@@ -63,4 +65,8 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
+    @PostMapping(value = "/product/exception")
+    public void exceptionTest() throws CustomException {
+        throw new CustomException(Constants.ExceptionClass.PRODUCT, HttpStatus.BAD_REQUEST, "의도한 에러가 발생하였습니다.");
+    }
 }
